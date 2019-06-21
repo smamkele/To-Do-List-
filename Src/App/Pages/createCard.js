@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button } from 'react-native';
+import { View, Button } from 'react-native';
 import { TextInput } from 'react-native-paper';
+import styles from '../../../styles';
+import DateTimePicker from '../Components/DatePicker/datePicker'
 //type Props = {};
 export default class NewCard extends Component {
     state = {
@@ -18,6 +20,7 @@ export default class NewCard extends Component {
     render() {
         return (
             <View>
+                <DateTimePicker></DateTimePicker>
                 <TextInput label='ID:' style={styles.welcome} onChangeText={(id) => this.setState({ id })}
                     value={this.state.id} >
                 </TextInput>
@@ -42,23 +45,5 @@ export default class NewCard extends Component {
 
 
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
-});
 
 

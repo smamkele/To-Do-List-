@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, View } from 'react-native';
-import Cards from './card';
-import MyButton from './floatButton';
+import Cards from '../Components/Cards/Card.Component';
+import MyButton from '../Components/FAB/FAB.Component';
 //type Props = {};
 export default class Home extends Component {
 

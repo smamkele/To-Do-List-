@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View,Button } from 'react-native';
 import { Card} from 'react-native-paper';
+import styles from '../Components/Cards/Card.Style'
 
 export default class Details extends Component {
   render() {  
@@ -11,28 +12,11 @@ export default class Details extends Component {
          <Text style={styles.welcome}>ID:{item.id}</Text>
          <Text style={styles.welcome}>Title:{item.title}</Text>
         <Text style={styles.welcome}>Name:{item.name}</Text>
-        <Text style={styles.welcome}>Contact:{item.contactNumber}</Text>        
-        <Button title='Go back home' onPress={() => this.props.navigation.navigate('Home')}></Button>      
+        <Text style={styles.text}>Contact:{item.contactNumber}</Text>        
+        <Button style={styles.button} title='Go back home' onPress={() => this.props.navigation.navigate('Home')}></Button>      
       </View>
     );
   } 
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+
