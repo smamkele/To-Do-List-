@@ -2,41 +2,35 @@ import React, { Component } from 'react';
 import { ScrollView, View } from 'react-native';
 import Cards from '../Components/Cards/Card.Component';
 import MyButton from '../Components/FAB/FAB.Component';
+
+
 //type Props = {};
-export default class Home extends Component {
+export default class Home extends Component {  
+constructor(props){
+  super(props)
+  let card = [{
+    date:"2019-06-21",
+    id: 1,
+    title: "Dog",
+    name: "'Sima",
+   contactNumber: "08475543",
+   uri: "https://picsum.photos/id/237/200/300"
+  }]
+  if(typeof this.props.navigation.getParam('tasks') !== 'undefined'){
+    console.log(this.props.navigation.getParam('tasks'));
+     card = this.props.navigation.getParam('tasks');  
+  } 
+    this.state = {card:card}
 
+  }
   render() {   
-    let card = [
-      {
-        id: 1,
-        title: 'Tower',
-        name: 'Lona',
-        contactNumber: '0847412543',
-        uri: 'https://picsum.photos/id/870/200/300?grayscale&blur=2'
-      },
-      {
-        id: 2,
-        title: 'PC',
-        name: 'Zanne',
-        contactNumber: '08475543',
-        uri: 'https://picsum.photos/id/2/700'
-      },
-      {
-        id: 3,
-        title: 'Dog',
-        name: 'Sima',
-        contactNumber: '08475543',
-        uri: 'https://picsum.photos/id/237/200/300'
-      },
-
-    ]
-
+    console.log(this.state);
     return (
       <View>
         <ScrollView>
-          <Cards tasks={card} navigation={this.props.navigation} />         
+          <Cards tasks={this.state.card} navigation={this.props.navigation} />         
         </ScrollView>
-        <MyButton navigation={this.props.navigation} />
+        <MyButton tasks={this.state.card} navigation={this.props.navigation} />
       </View>       
     );
 

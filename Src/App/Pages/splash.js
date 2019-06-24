@@ -10,7 +10,7 @@ export default class Splash extends Component {
     authCheck = () =>{
         setTimeout(() =>{
             this.props.navigation.navigate('Auth');
-        },2000)
+        },200)
     }
     render() {
         return (

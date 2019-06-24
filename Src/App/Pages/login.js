@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, TextInput, StyleSheet, Image, Email, Password } from 'react-native'
 import styles from '../../../styles';
 
+
 export default class Login extends Component {
     state = {
         email: '',
@@ -10,7 +11,8 @@ export default class Login extends Component {
     login = (email, password) => {
         alert('email:' + email + 'password:' + password)
     }
-    render() {
+    render() { 
+            
         return (
             <View style={styles.container}>
                 <TextInput style={styles.input}

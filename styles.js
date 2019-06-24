@@ -26,5 +26,6 @@ export default
             height: 60,
             width: 60
         },
+       
         
     })

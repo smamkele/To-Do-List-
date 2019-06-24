@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Home from '../Pages/home';
 import Details from '../Pages/details';
 import NewCard from '../Pages/createCard';
+const myData = require('../../Assets/data.json');
 
 
 const AuthNavigator = createStackNavigator({
@@ -17,13 +18,15 @@ const AuthNavigator = createStackNavigator({
     });
 const MainNavigator = createStackNavigator({
     Home: {
-        screen: Home
+        screen: Home,
+     
     },
     Details: {
         screen: Details
     },
     NewCard: {
-        screen: NewCard
+        screen: NewCard,
+     
     }
 },
     {
@@ -46,7 +49,9 @@ const AppNavigator = createSwitchNavigator({
     });
 
 export default class navigation extends Component {
-    state = {}
+    state = {
+        myData:myData
+    }
     render() {
         return (<AppContainer />)
     }
